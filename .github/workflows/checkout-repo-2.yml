@@ -1,0 +1,21 @@
+name: Checkout Repo 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  checkout-another-private-github-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout another private repo
+        uses: actions/checkout@v4
+        with:
+          repository: morelandc/ruby-scripts-2
+          
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with: 
+          ruby-version: '3.3'
+          
+      - name: Run ruby file 
+        run: ruby print-string3.rb
