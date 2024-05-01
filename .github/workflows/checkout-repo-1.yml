@@ -2,3 +2,20 @@ name: Checkout Repo 1
 
 on:
   workflow_dispatch:
+
+jobs:
+  checkout-another-github-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout another public repo
+        uses: actions/checkout@v4
+        with:
+          repository: morelandc/ruby-script
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with: 
+          ruby-version: '3.3'
+
+      - name: Run ruby file 
+        run: ruby print-string2.rb
