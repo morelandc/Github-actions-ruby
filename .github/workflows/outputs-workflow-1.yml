@@ -2,3 +2,15 @@ name: Outputs Workflow 1
 
 on:
   workflow_dispatch:
+  
+jobs:
+  job1:
+    runs-on: ubuntu_latest
+    outputs:
+      output1: ${{ steps.step1.outputs.url1 }}
+  
+    steps:
+      - id: step1
+        run: echo "url1=https://abc.com" >> "$GITHUB_OUTPUT"
+
+
