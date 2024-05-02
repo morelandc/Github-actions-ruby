@@ -7,12 +7,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.step1.outputs.url1 }}
+      output1: ${{ steps.step1.outputs.var1 }}
   
     steps:
       - id: step1
         run: |
-          "url1=https://abc.com" >> "$GITHUB_OUTPUT"
-          echo "${{ steps.step1.outputs.url }}"
+          "var1=Hello World" >> "$GITHUB_OUTPUT"
+          echo "${{ steps.step1.outputs.var1 }}"
 
 
