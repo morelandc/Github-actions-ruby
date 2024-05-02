@@ -11,6 +11,8 @@ jobs:
   
     steps:
       - id: step1
-        run: echo "url1=https://abc.com" >> "$GITHUB_OUTPUT"
+        run: |
+          "url1=https://abc.com" >> "$GITHUB_OUTPUT"
+          echo "${{ steps.step1.outputs.url }}"
 
 
