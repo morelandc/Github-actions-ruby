@@ -1,0 +1,4 @@
+name: Outputs Workflow 1
+
+on:
+  workflow_dispatch:
