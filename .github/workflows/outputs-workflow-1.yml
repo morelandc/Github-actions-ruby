@@ -12,7 +12,7 @@ jobs:
       - id: step1
         run: |
           echo "var1=Hello World" >> "$GITHUB_OUTPUT"
-          echo "output1 is ${{ steps.step1outputs.var1 }}"
+          echo "output1 is ${{ steps.step1.outputs.var1 }}"
         
   job2:
     runs-on: ubuntu-latest
